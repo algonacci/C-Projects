@@ -1,8 +1,12 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <math.h>
 
 int main()
 {
-    int number = 76;
+    srand(time(NULL));
+    int number = rand() % 100 + 1;
     int guessedNumber;
 
     printf("Guess the number: \n");
@@ -17,6 +21,11 @@ int main()
         else
         {
             printf("The guessed number is bigger\n");
+        }
+
+        if (abs(guessedNumber - number) <= 5)
+        {
+            printf("You are getting closer!!\n");
         }
 
         printf("Guess again!\n");
